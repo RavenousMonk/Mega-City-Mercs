@@ -1,0 +1,50 @@
+[gd_scene load_steps=5 format=3]
+
+[ext_resource type="Script" path="res://scenes/menu/map/WorldMap.gd" id="1_rrvv7"]
+[ext_resource type="Theme" uid="uid://ccb4xp5uvbbnc" path="res://src/theme/worldmap_country_buttons.tres" id="3"]
+[ext_resource type="Texture2D" uid="uid://br6kodi4a3n24" path="res://assets/visual/maps/world_map.png" id="3_j2br5"]
+[ext_resource type="Script" path="res://scenes/menu/map/cam_view.gd" id="5_03iwy"]
+
+[node name="WorldMap" type="Node2D"]
+script = ExtResource("1_rrvv7")
+
+[node name="Map" type="Sprite2D" parent="."]
+texture = ExtResource("3_j2br5")
+metadata/_edit_lock_ = true
+
+[node name="cam_view" type="Camera2D" parent="."]
+script = ExtResource("5_03iwy")
+
+[node name="btn_NAmerica" type="Button" parent="."]
+use_parent_material = true
+offset_left = -1500.0
+offset_top = -501.0
+offset_right = -1141.0
+offset_bottom = -251.0
+focus_mode = 0
+theme = ExtResource("3")
+metadata/_edit_lock_ = true
+
+[node name="btn_SAmerica" type="Button" parent="."]
+use_parent_material = true
+offset_left = -980.0
+offset_top = 217.0
+offset_right = -621.0
+offset_bottom = 467.0
+focus_mode = 0
+theme = ExtResource("3")
+metadata/_edit_lock_ = true
+
+[node name="btn_Europe" type="Button" parent="."]
+use_parent_material = true
+offset_left = -69.0
+offset_top = -631.0
+offset_right = 290.0
+offset_bottom = -381.0
+focus_mode = 0
+theme = ExtResource("3")
+metadata/_edit_lock_ = true
+
+[connection signal="pressed" from="btn_NAmerica" to="." method="_on_btn_n_america_pressed"]
+[connection signal="pressed" from="btn_SAmerica" to="." method="_on_btn_s_america_pressed"]
+[connection signal="pressed" from="btn_Europe" to="." method="_on_btn_europe_pressed"]

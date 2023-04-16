@@ -1,0 +1,70 @@
+[gd_scene load_steps=6 format=3 uid="uid://cd88rat47iqm8"]
+
+[ext_resource type="Script" path="res://scenes/game/StageManager.gd" id="1_0jc5f"]
+
+[sub_resource type="Animation" id="Animation_fjb1i"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.027451, 0.027451, 0.129412, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_iv466"]
+resource_name = "TransIn"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.027451, 0.027451, 0.129412, 0), Color(0.027451, 0.027451, 0.129412, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_4st6g"]
+resource_name = "TransOut"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.027451, 0.027451, 0.129412, 1), Color(0.027451, 0.027451, 0.129412, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tlpen"]
+_data = {
+"RESET": SubResource("Animation_fjb1i"),
+"TransIn": SubResource("Animation_iv466"),
+"TransOut": SubResource("Animation_4st6g")
+}
+
+[node name="StageManager" type="CanvasLayer"]
+script = ExtResource("1_0jc5f")
+
+[node name="bg" type="ColorRect" parent="."]
+offset_right = 1937.0
+offset_bottom = 1093.0
+color = Color(0.027451, 0.027451, 0.129412, 1)
+
+[node name="anim" type="AnimationPlayer" parent="."]
+root_node = NodePath("../bg")
+libraries = {
+"": SubResource("AnimationLibrary_tlpen")
+}

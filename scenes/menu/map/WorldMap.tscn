@@ -1,0 +1,50 @@
+[gd_scene load_steps=9 format=3 uid="uid://ce4qa52wfwm8v"]
+
+[ext_resource type="Script" path="res://scenes/menu/map/WorldMap.gd" id="1_cpl38"]
+[ext_resource type="Script" path="res://scenes/menu/map/cam_view.gd" id="3_0qe6g"]
+[ext_resource type="Texture2D" uid="uid://br6kodi4a3n24" path="res://assets/visual/maps/world_map.png" id="3_j2br5"]
+[ext_resource type="Texture2D" uid="uid://cbnbahx8debic" path="res://assets/visual/flags/na/flag_sacramento.png" id="4_ea0iy"]
+
+[sub_resource type="Environment" id="Environment_gscnr"]
+background_mode = 3
+glow_enabled = true
+glow_intensity = 1.0
+glow_strength = 0.95
+glow_blend_mode = 0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vg50q"]
+texture = ExtResource("4_ea0iy")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dtdng"]
+texture = ExtResource("4_ea0iy")
+modulate_color = Color(1.5, 1.5, 1.5, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5s5yv"]
+texture = ExtResource("4_ea0iy")
+modulate_color = Color(1.5, 1.5, 1.5, 1)
+
+[node name="WorldMap" type="Node2D"]
+script = ExtResource("1_cpl38")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_gscnr")
+
+[node name="Map" type="Sprite2D" parent="."]
+texture = ExtResource("3_j2br5")
+metadata/_edit_lock_ = true
+
+[node name="cam_view" type="Camera2D" parent="."]
+script = ExtResource("3_0qe6g")
+
+[node name="btn_Dis_Sacramento" type="Button" parent="."]
+use_parent_material = true
+offset_left = -1615.0
+offset_top = -392.0
+offset_right = -1590.0
+offset_bottom = -378.0
+focus_mode = 0
+theme_override_styles/normal = SubResource("StyleBoxTexture_vg50q")
+theme_override_styles/hover = SubResource("StyleBoxTexture_dtdng")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_5s5yv")
+
+[connection signal="pressed" from="btn_Dis_Sacramento" to="." method="_on_btn_dis_sacramento_pressed"]

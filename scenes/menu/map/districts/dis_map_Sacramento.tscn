@@ -1,0 +1,71 @@
+[gd_scene load_steps=8 format=3 uid="uid://8l23qqg8oarq"]
+
+[ext_resource type="Script" path="res://scenes/menu/map/districts/dis_map_Sacramento.gd" id="1_cu6h4"]
+[ext_resource type="Script" path="res://scenes/menu/map/cam_view.gd" id="2_w8sd1"]
+[ext_resource type="Texture2D" uid="uid://cy3p48n0gvu4h" path="res://assets/visual/maps/sacramento.png" id="3_mjsbc"]
+[ext_resource type="Texture2D" uid="uid://b4ptxc0to60e7" path="res://assets/visual/maps/downtown-512.png" id="4_u84qc"]
+
+[sub_resource type="Animation" id="Animation_h6g2p"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_y27yd"]
+resource_name = "fade_in"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3tuc1"]
+_data = {
+"RESET": SubResource("Animation_h6g2p"),
+"fade_in": SubResource("Animation_y27yd")
+}
+
+[node name="District" type="Node2D"]
+script = ExtResource("1_cu6h4")
+
+[node name="cam_view" type="Camera2D" parent="."]
+script = ExtResource("2_w8sd1")
+metadata/_edit_lock_ = true
+
+[node name="spr_map" type="Sprite2D" parent="."]
+modulate = Color(0, 0, 0, 1)
+texture = ExtResource("3_mjsbc")
+metadata/_edit_lock_ = true
+
+[node name="anim_fadein" type="AnimationPlayer" parent="spr_map"]
+autoplay = "fade_in"
+libraries = {
+"": SubResource("AnimationLibrary_3tuc1")
+}
+
+[node name="btn_Downtown" type="TextureButton" parent="."]
+offset_left = -374.0
+offset_top = 31.0
+offset_right = -334.0
+offset_bottom = 71.0
+texture_normal = ExtResource("4_u84qc")
+texture_pressed = ExtResource("4_u84qc")
+
+[connection signal="pressed" from="btn_Downtown" to="." method="_on_btn_Downtown_pressed"]

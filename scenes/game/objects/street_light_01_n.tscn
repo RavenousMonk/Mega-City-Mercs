@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://i20dtl2w6b3e"]
+
+[ext_resource type="Texture2D" uid="uid://b07ed5ov6aswl" path="res://assets/visual/props/street_lamp_01_N.png" id="1_dk5xy"]
+[ext_resource type="Texture2D" uid="uid://bea5m53furhmf" path="res://assets/visual/lighting/gradient.png" id="2_60cfc"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_w37xg"]
+radius = 2.5
+height = 5.0
+
+[node name="StreetLight_01_N" type="StaticBody2D"]
+z_index = 1
+y_sort_enabled = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+y_sort_enabled = true
+position = Vector2(0, -16)
+texture = ExtResource("1_dk5xy")
+metadata/_edit_lock_ = true
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+y_sort_enabled = true
+position = Vector2(0, -28)
+scale = Vector2(5, 5)
+color = Color(1, 0.988235, 0.25098, 1)
+energy = 0.8
+texture = ExtResource("2_60cfc")
+texture_scale = 0.3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_w37xg")
+metadata/_edit_lock_ = true

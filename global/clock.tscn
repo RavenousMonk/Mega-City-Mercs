@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://cqtt7lrscxerf"]
+
+[ext_resource type="Script" path="res://global/clock.gd" id="1_istxr"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_gptgx"]
+font_color = Color(0.45098, 0.54902, 0.658824, 1)
+
+[node name="clock" type="Label"]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "12:00"
+label_settings = SubResource("LabelSettings_gptgx")
+script = ExtResource("1_istxr")

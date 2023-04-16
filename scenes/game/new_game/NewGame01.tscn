@@ -1,0 +1,275 @@
+[gd_scene load_steps=6 format=3 uid="uid://dhrojkjj18ffy"]
+
+[ext_resource type="Script" path="res://scenes/game/new_game/NewGame01.gd" id="1_3v7nk"]
+[ext_resource type="Texture2D" uid="uid://33w0aru1e3md" path="res://assets/visual/menu/menu_button.png" id="1_w6qxj"]
+[ext_resource type="Texture2D" uid="uid://bpf7ntmavqwjn" path="res://assets/visual/menu/menu_button_press.png" id="2_hlonc"]
+[ext_resource type="Texture2D" uid="uid://daquqll6c70al" path="res://assets/visual/menu/menu_button_hover.png" id="3_lksmt"]
+[ext_resource type="Texture2D" uid="uid://ctrcr2rvo0hk3" path="res://assets/visual/menu/menu_button_focus.png" id="5_fo50m"]
+
+[node name="NewGame" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_3v7nk")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 25
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="CharacterName" type="LineEdit" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+placeholder_text = "Enter Name Here"
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/CharacterName"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Archetypes" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(1080, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBox" type="VBoxContainer" parent="MarginContainer/VBoxContainer/Archetypes"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="btnCybernaut" type="TextureButton" parent="MarginContainer/VBoxContainer/Archetypes/VBox"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+size_flags_vertical = 3
+focus_mode = 1
+texture_normal = ExtResource("1_w6qxj")
+texture_pressed = ExtResource("2_hlonc")
+texture_hover = ExtResource("3_lksmt")
+texture_focused = ExtResource("5_fo50m")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Archetypes/VBox/btnCybernaut"]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 10.0
+offset_right = 154.0
+offset_bottom = 43.0
+theme_override_font_sizes/font_size = 21
+text = "Cybernaut"
+
+[node name="Panel" type="Panel" parent="MarginContainer/VBoxContainer/Archetypes/VBox"]
+custom_minimum_size = Vector2(0, 250)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Archetypes/VBox/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 23
+text = "Muscles : 5
+Finesse : 3
+Toughness : 3
+Presence : 2
+Acumen : 2
+Resolve : 3"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBox2" type="VBoxContainer" parent="MarginContainer/VBoxContainer/Archetypes"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="btnNetweaver" type="TextureButton" parent="MarginContainer/VBoxContainer/Archetypes/VBox2"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+size_flags_vertical = 3
+focus_mode = 1
+texture_normal = ExtResource("1_w6qxj")
+texture_pressed = ExtResource("2_hlonc")
+texture_hover = ExtResource("3_lksmt")
+texture_focused = ExtResource("5_fo50m")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Archetypes/VBox2/btnNetweaver"]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 10.0
+offset_right = 154.0
+offset_bottom = 43.0
+theme_override_font_sizes/font_size = 21
+text = "Netweaver"
+
+[node name="Panel" type="Panel" parent="MarginContainer/VBoxContainer/Archetypes/VBox2"]
+custom_minimum_size = Vector2(0, 250)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Archetypes/VBox2/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 23
+text = "Muscles : 2
+Finesse : 3
+Toughness : 3
+Presence : 2
+Acumen : 5
+Resolve : 3"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBox3" type="VBoxContainer" parent="MarginContainer/VBoxContainer/Archetypes"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="btnThaumaturge" type="TextureButton" parent="MarginContainer/VBoxContainer/Archetypes/VBox3"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+size_flags_vertical = 3
+focus_mode = 1
+texture_normal = ExtResource("1_w6qxj")
+texture_pressed = ExtResource("2_hlonc")
+texture_hover = ExtResource("3_lksmt")
+texture_focused = ExtResource("5_fo50m")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Archetypes/VBox3/btnThaumaturge"]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 10.0
+offset_right = 154.0
+offset_bottom = 43.0
+theme_override_font_sizes/font_size = 21
+text = "Thaumaturge"
+
+[node name="Panel" type="Panel" parent="MarginContainer/VBoxContainer/Archetypes/VBox3"]
+custom_minimum_size = Vector2(0, 250)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Archetypes/VBox3/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 23
+text = "Muscles : 2
+Finesse : 2
+Toughness : 3
+Presence : 3
+Acumen : 3
+Resolve : 5"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBox4" type="VBoxContainer" parent="MarginContainer/VBoxContainer/Archetypes"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="btnMechmaster" type="TextureButton" parent="MarginContainer/VBoxContainer/Archetypes/VBox4"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+size_flags_vertical = 3
+focus_mode = 1
+texture_normal = ExtResource("1_w6qxj")
+texture_pressed = ExtResource("2_hlonc")
+texture_hover = ExtResource("3_lksmt")
+texture_focused = ExtResource("5_fo50m")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Archetypes/VBox4/btnMechmaster"]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 10.0
+offset_right = 154.0
+offset_bottom = 43.0
+theme_override_font_sizes/font_size = 21
+text = "Mechmaster"
+
+[node name="Panel" type="Panel" parent="MarginContainer/VBoxContainer/Archetypes/VBox4"]
+custom_minimum_size = Vector2(0, 250)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Archetypes/VBox4/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 23
+text = "Muscles : 3
+Finesse : 3
+Toughness :3
+Presence : 2
+Acumen : 5
+Resolve : 2"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Navigation" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 10
+
+[node name="Back" type="TextureButton" parent="MarginContainer/VBoxContainer/Navigation"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+focus_mode = 0
+texture_normal = ExtResource("1_w6qxj")
+texture_pressed = ExtResource("2_hlonc")
+texture_hover = ExtResource("3_lksmt")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Navigation/Back"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Back"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Confirm" type="TextureButton" parent="MarginContainer/VBoxContainer/Navigation"]
+layout_mode = 2
+focus_mode = 0
+texture_normal = ExtResource("1_w6qxj")
+texture_pressed = ExtResource("2_hlonc")
+texture_hover = ExtResource("3_lksmt")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Navigation/Confirm"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Confirm"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Archetypes/VBox/btnCybernaut" to="." method="_on_btn_cybernaut_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Archetypes/VBox2/btnNetweaver" to="." method="_on_btn_netweaver_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Archetypes/VBox3/btnThaumaturge" to="." method="_on_btn_thaumaturge_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Archetypes/VBox4/btnMechmaster" to="." method="_on_btn_mechmaster_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Navigation/Confirm" to="." method="_on_continue_button_pressed"]

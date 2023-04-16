@@ -1,0 +1,57 @@
+[gd_scene load_steps=2 format=3 uid="uid://ct35n6b86is0"]
+
+[ext_resource type="PackedScene" uid="uid://cqtt7lrscxerf" path="res://global/clock.tscn" id="1_0r53p"]
+
+[node name="GUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="topright" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 40.0
+grow_horizontal = 0
+
+[node name="clock" parent="topright" instance=ExtResource("1_0r53p")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="topright"]
+layout_mode = 2
+text = "just some stuff"
+
+[node name="Label2" type="Label" parent="topright"]
+layout_mode = 2
+text = "just some stuff too"
+
+[node name="topleft" type="VBoxContainer" parent="."]
+layout_mode = 1
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="botright" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -40.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="botleft" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -40.0
+offset_right = 40.0
+grow_vertical = 0

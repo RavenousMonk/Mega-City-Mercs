@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="SaveGame" load_steps=2 format=3 uid="uid://mxs0evp8seat"]
+
+[ext_resource type="Script" path="res://src/SaveGame.gd" id="1_e7mpq"]
+
+[resource]
+script = ExtResource("1_e7mpq")
+character_name = ""
+att_muscles = 0
+att_finesse = 0
+att_toughness = 0
+att_presence = 0
+att_acumen = 0
+att_resolve = 0
